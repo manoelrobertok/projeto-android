@@ -99,7 +99,7 @@ header > p {
     padding-left: 10px; /*Espaço a esquerda quanto a responsividade.*/
     padding-right: 10px;  /*Espaço a direita quanto a responsividade.*/
     margin: auto;
-    margin-bottom: 20px; /*Distância entre o parágrafo e os Links*/
+    padding-bottom: 50px; /*Distância entre o parágrafo e os Links*/
     max-width: 550px;
     text-shadow: 2px 2px 0px rgba(8, 8, 8, 0.438); /*Sombra do Parágrafo*/
 }
