@@ -1,0 +1,264 @@
+@charset "utf-8";
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap'); /*Importamos a fonte "bebas", do google fontes.*/
+
+@font-face {
+    font-family: 'Android' ;
+    src: url('fontes/IDroid\ Bold.otf') format('opentype'); /*A fonte android*/
+    font-weight: normal;
+}
+
+/* Cores utilizadas no projeto:
+#c5ebd6
+#83e1ad
+#3ddc84    *Escala de cima p/ baixo do claro ao mais escuro
+#2fa866
+#1a5c37
+#063d1e
+*/
+
+                        /*Criando Variáveis*/
+/*Podemos criar pseudo-classes que nos possibilitaram criar variáveis.Que, por sua vez, irão guardar irfomações que serão utilizadas depois.*/
+
+:root /*Aqui podemos declarar nossas "variáveis globais".*/
+ {
+    --cor0: #c5ebd6;
+    --cor1: #83e1ad;
+    --cor3: #3ddc84;
+    --cor4: #2fa866;     /* Variável cor - Cores do projeto*/
+    --cor5: #1a5c37;
+    --cor6: #063d1e;
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque: 'Bebas Neue', cursive;   /*   variável fontes - Fontes do projeto*/
+    --font-Android: 'Android', cursive;
+}
+
+    *{ /*Com a tag '*', configuramos todos os elementos do site.*/
+        margin: 0px;
+        padding: 0px;
+    }
+/*----------------------Configurações Gerais------------------------------*/
+    img{
+        margin-left:400px;
+        
+    }
+
+ 
+
+    h4{
+        text-align: right;
+        
+    }
+
+    main{
+        margin: 0px;
+        padding: 0px;
+    }
+
+   /*Agora basta informar qual a cor queremos para cada parde do nossi projeto*/
+
+body /*O corpo d site.*/
+{
+    background-color: var(--cor0);
+   /* background-color: var(--cor6);*/
+    font-family: var(--fonte-padrao);
+}
+
+
+
+header {
+    
+     background-image: linear-gradient( to bottom, var(--cor5),var(--cor4), var(--cor5));/*Cor de fundo em gradiente*/ 
+    min-height: 145px; /*Altura minima do header.*/
+    text-align: center;  /*Textos centralizados*/
+    padding-top: 15px; /*Espaço acima*/
+    padding-bottom: 20px; /*Espaço abaixo*/
+}   
+
+/*Aqui vemos o Cabeçalho(header), que tem uma tag filha, (h1).Ou seja, um título dentro do cabeçalho!*/
+
+header > h1 
+{   color:white; /*Cor das letras do Título.*/
+    
+    font-family: var(--fonte-destaque); /*Tipo da fonte*/
+    font-size: 4.5em; /*Tamanho da fonte*/
+    text-align: center; /*Texto centralizado*/
+    padding-top: 30px; /*espaço entre o  título e o parágrafo.*/
+    text-shadow: 2px 2px 0px rgba(26, 25, 25, 0.377); /*Sombra do título*/
+    font-weight: normal;
+   
+    }
+
+header > p {
+    font-family: var(--fonte-padrao);
+    font-size: 1.5em;
+    color: white; 
+    text-align: center;
+    padding-left: 10px; /*Espaço a esquerda quanto a responsividade.*/
+    padding-right: 10px;  /*Espaço a direita quanto a responsividade.*/
+    margin: auto;
+    margin-bottom: 20px; /*Distância entre o parágrafo e os Links*/
+    max-width: 550px;
+    text-shadow: 2px 2px 0px rgba(8, 8, 8, 0.438); /*Sombra do Parágrafo*/
+}
+
+nav{
+    background-color: var(--cor5); /*Fundo do Link(nav)*/
+    padding: 10px; /*Altura da nav.*/
+    font-weight: bold;  /* Letras em negrito.*/
+  
+}
+
+nav > a{
+    color: white; /*Cor das letras sem a interferência do mouse.*/
+    padding: 10px; 
+    border-radius: 3px; /* borda dos botões ao passar o mouse.*/
+    text-decoration: none; /*Letras dos botões sem o sublinhado.*/
+    transition-duration: .5s; /*Tempo de transição ao passar o mouse.*/
+    
+}
+
+nav > a:hover{
+
+    background-color: var(--cor4); /*Cor dos botões ao passar o mouse.*/
+
+    /*background-image: linear-gradient(to bottom, var(--cor3), var(--cor4), var(--cor5));  *** Nota: Não foi possivel usar o "transitio-duration" no "backcolor-image" */
+
+    color: var(--cor6); 
+    /*Ao passar o mouse, as letras usarão a "var cor6".*/
+    }
+
+    
+main{
+   
+    min-width: 400px; /* Aqui configuramos o tamnho mínimo e máximo, para que seja uma página responsiva*/
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    
+}
+
+main h1 /*O conteúdo principal.*/
+{color: var(--cor5);
+font-family: var(--font-Android);
+text-align: center;
+padding: 20px;
+
+}
+
+main h2 {
+    font-family:var(--font-Android) ;
+    text-align: center;
+    color:var(--cor5);
+    font-weight: normal;
+    padding:10px;
+}
+
+main p{ /*Configuração de todos os PARÁGRAFOS dentro da tag "main"*/
+
+    margin: 15px 0px 15px 0px; /* Margem para todos os parágrafos(Sentido Horário)*/
+    text-align: justify; /*Texto justificado*/
+    text-indent: 30px;  /*indentação;Recuo em cada parágrafo.*/
+    font-size: 1.2em; /*Tamanho da fonte*/
+    line-height: 1.5em; /*Tamanho ou distância entre as linhas*/  
+}
+
+div.video{
+    background-image: linear-gradient( to bottom, var(--cor5),var(--cor4), var(--cor5));
+    margin: 0px -20px 30px -20px;  /*Para que o background-image, vá até as extremidades do bloco*/
+    padding: 20px; /*Criando espaços entre o backgroun-image e o vídeo*/
+    padding-bottom: 59%;
+    position: relative;
+}
+
+div.video > iframe{
+    position:absolute;
+    top:5%;
+    left: 5%;
+    width:90%;
+    height:90%;
+
+}
+
+main strong{ /*Configuração de todos as tags "Strongs" (negrito)*/
+
+    font-weight: bold; /* Negrito*/
+    color: var(--cor5); /*Cor do texto negrito*/
+    padding: 2px 6px; /*Espaço ao redor do texto negrito*/
+}
+
+main a{ /*Configuração de todas as tags "a" (links) dentro de main.*/
+    font-weight: bold;
+    color: var(--cor5);
+    padding: 2px 6px;
+    text-decoration: none;
+}
+
+main a:hover{
+    color: var(--cor3);
+    
+}
+
+main img{ /*Configuração de todas as imagens dentro da tag "main"(Conteúdo principal*/
+
+    width: 85% ;
+    margin: 70px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.452);
+}
+
+main img.pequena{
+    max-width: 350px;
+    display: block; /*Uma Imagem por padrão não é um bloco."Transformando ela em bloco, podemos configurá-la, usando outras tags.*/
+    margin: auto; /*Centralizamos a imagem*/
+
+}
+aside{
+   background-color: #83e1ad9c;/*Cor de fundo do "Aside*/
+   padding: 10px; /*Espaço ao redor do "Aside*/
+   border-radius: 10px; /*bordas arredondadas*/
+   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.438); /*Sombra no bloco "Aside"*/
+}
+
+aside > ul{
+    list-style-type: '\2714\00A0\00A0'; /* "2714"- É a referência do "visto", "00A0" é o espaço entre o "visto" e a numeração da lista*/
+    list-style-position: inside; /*Coloca o símbolo do "visto" dentro do background-color*/
+    columns: 2; /* Divide a lista em duas colunas*/
+    
+}
+
+ aside > h3 {
+    background-color: var(--cor5); /*Cor de fundo do H3, dentro de "Aside"*/
+    color: white; /*Cor da fonte*/
+    padding: 8px; /*Espaço ao redor do H3*/
+    margin: -10px -10px 0px -10px; /*Os backgroud-colors são alinhados.Cor clara e cor escura*/
+    border-radius: 10px 10px 0px 0px; /*Bordas de cima e as bordas de baixo*/
+ }
+
+
+
+
+footer{
+    background-image: linear-gradient(to left, var(--cor6), transparent);
+    color: white;
+    padding: 5px;
+    text-align: center;
+    font-size: 0.8em;   
+  
+}
+
+footer a{
+    text-decoration: none;
+    color:var(--cor6);    
+}
+
+footer a:hover{
+    color: white;
+}
+
+
